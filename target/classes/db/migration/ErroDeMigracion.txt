@@ -1,0 +1,6 @@
+Para solucionar este problema será
+ necesario acceder a la base de datos
+ de la aplicación y ejecutar el siguiente
+ comando sql:
+
+ delete from flyway_schema_history where success = 0;
