@@ -11,6 +11,7 @@ public interface MedicoRepository extends JpaRepository<Medico,Long> {
 
     Page<Medico> findByActivoTrue(Pageable paginacion);
 
+    //Primer Cambio en ItellId
     @Query("""
             Select m from Medico m
             where m.activo= 1 and 
