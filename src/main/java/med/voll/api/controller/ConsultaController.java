@@ -20,12 +20,19 @@ public class ConsultaController {
     @Autowired
     private AgendaDeConsultaService service;
 
+
     @PostMapping
     @Transactional
     public ResponseEntity agendar(@RequestBody @Valid DatosAgendarConsulta datos){
 
-        service.agendar(datos);
+        var response = service.agendar(datos);
 
-        return ResponseEntity.ok(new DatosDetalleConsulta(null,null,null,null));
+        return ResponseEntity.ok(response);
     }
+//    @DeleteMapping
+//    @Transactional
+//    public ResponseEntity cancelar(@RequestBody @Valid DatosCancelamientoConsulta datos){
+//        service.cancelar(datos);
+//        return ResponseEntity.noContent().build();
+//    }
 }
